@@ -1,0 +1,9 @@
+{
+	"name": "Outlook Refresher",
+	"version": "1.0",
+	"description": "Prevents the annoying logging out from Outlook Web Applications(OWA)",
+	"background":[
+		"scripts":["js/background.js"]
+	],
+	"manifest_version": 2
+}
