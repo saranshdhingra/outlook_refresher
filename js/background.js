@@ -15,7 +15,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 		started_for.push(domain);
 		chrome.browserAction.setIcon({
 			"path":{
-				"38":"images/refresh_color.png"
+				"38":"images/38/refresh_color.png"
 			},
 			tabId:tab.id
 		});
@@ -27,7 +27,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 		started_for.splice(started_for.indexOf(domain),1);
 		chrome.browserAction.setIcon({
 			"path":{
-				"38":"images/refresh_gray.png"
+				"38":"images/38/refresh_gray.png"
 			},
 			tabId:tab.id
 		});
