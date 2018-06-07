@@ -12,7 +12,10 @@ A browser extension that prevents the annoying continuous log out from Outlook W
 - When you close your tab or toggle the extension button while the outlook tab is active, the extension will stop working for that tab.
 
 ## Directly from chrome store
-_Yet to be released_
+- Go to [Chrome store](https://chrome.google.com/webstore/detail/icicklhncnongibfodkagbaiaicmldaf/)
+- Click on Add to chrome
+- Go to your outlook website, and press the extension icon(_it should turn red_)
+- When you close your tab or toggle the extension button while the outlook tab is active, the extension will stop working for that tab.
 
 
 # Visual
@@ -26,6 +29,6 @@ _Yet to be released_
 ![Active state](images/active.png)
 
 # To Dos
-- Release on chrome store.
+- ~~Release on chrome store.~~
 - Make another branch for firefox extension.
 - Test if its better to use a content script loaded only for outlook.*.com
