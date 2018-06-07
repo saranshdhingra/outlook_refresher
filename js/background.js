@@ -60,7 +60,7 @@ function start_interval(){
 		started_for.forEach(function(domain){
 			var request = new XMLHttpRequest();
 
-			// request.open("POST", domain+"keepalive.owa", true);
+			request.open("POST", domain+"keepalive.owa", true);
 			request.send();
 			// console.log("calling keepalive for: "+domain);
 		});
