@@ -2,8 +2,13 @@
 	"name": "Outlook Refresher",
 	"version": "1.0",
 	"description": "Prevents the annoying logging out from Outlook Web Applications(OWA)",
-	"background":[
+	"browser_action": {
+		"name": "Ooutlook KeepAlive",
+		"default_icon":"images/refresh_gray.png"
+	},
+	"background":{
 		"scripts":["js/background.js"]
-	],
+	},
+	"permissions":["tabs","cookies","<all_urls>"],
 	"manifest_version": 2
 }
