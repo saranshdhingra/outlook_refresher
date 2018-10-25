@@ -30,5 +30,7 @@ A browser extension that prevents the annoying continuous log out from Outlook W
 
 # To Dos
 - ~~Release on chrome store.~~
+- ~~Use Content scripts to automatically start the keepalive requests.~~
 - Make another branch for firefox extension.
-- Test if its better to use a content script loaded only for outlook.*.com
+- Update the icon when automatically keeping-alive a page.
+- Update content script whenever the domain is updated.
