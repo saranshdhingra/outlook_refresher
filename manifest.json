@@ -1,6 +1,6 @@
 {
 	"name": "Outlook KeepAlive",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "Prevents the annoying logging out from Outlook Web Applications(OWA)",
 	"browser_action": {
 		"name": "Ooutlook KeepAlive",
@@ -9,6 +9,10 @@
 	"background":{
 		"scripts":["js/background.js"]
 	},
+	"content_scripts":[{
+		"matches":["<all_urls>"],
+		"js":["js/content.js"]
+	}],
 	"permissions":["tabs","cookies","<all_urls>"],
 	"manifest_version": 2
 }
