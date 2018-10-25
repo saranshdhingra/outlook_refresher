@@ -1,0 +1,37 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	font-family:arial;
+	font-size:16px;
+	color:#333;
+	text-align:center;
+	padding:10px 20px;
+	min-width:250px;
+	margin:0;
+}
+#add_url_span{
+	cursor:not-allowed;
+	display:inline-block;
+}
+#add_url_btn{
+	border:none;
+	border-radius:20px;
+	cursor:pointer;
+	background:#71aaff;
+	color:#fff;
+	padding: 8px 20px;
+}
+#add_url_btn.disabled{
+	pointer-events:none;
+	background:#b7b5b5;
+}
+h4{
+	text-align:left;
+}
+#added_urls{
+	text-align:left;
+}
+ul{
+	padding-left:1em;
+}

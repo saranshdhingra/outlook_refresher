@@ -1,5 +1,5 @@
 var timeInterval,
-	selectedDomains = [""],
+	selectedDomains = [],
 	refresh_every = 10 * 60 * 1000; //10 minutes
 
 (function(){

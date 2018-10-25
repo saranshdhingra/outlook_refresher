@@ -4,7 +4,8 @@
 	"description": "Prevents the annoying logging out from Outlook Web Applications(OWA)",
 	"browser_action": {
 		"name": "Ooutlook KeepAlive",
-		"default_icon":"images/38/refresh_gray.png"
+		"default_icon":"images/38/refresh_gray.png",
+		"default_popup":"popup.html"
 	},
 	"background":{
 		"scripts":["js/background.js"]
@@ -13,6 +14,6 @@
 		"matches":["<all_urls>"],
 		"js":["js/content.js"]
 	}],
-	"permissions":["tabs","cookies","<all_urls>"],
+	"permissions": ["tabs", "activeTab", "cookies", "<all_urls>"],
 	"manifest_version": 2
 }
