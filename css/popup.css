@@ -26,6 +26,10 @@ body{
 	pointer-events:none;
 	background:#b7b5b5;
 }
+#add_url_btn:active,
+#add_url_btn:focus{
+	outline:none;
+}
 h4{
 	text-align:left;
 }
@@ -34,4 +38,28 @@ h4{
 }
 ul{
 	padding-left:1em;
+}
+li{
+	position: relative;
+	padding-right:30px;
+	margin-bottom:10px;
+}
+.remove_btn{
+	position: absolute;
+	right:0;
+	top:50%;
+	transform:translateY(-50%);
+	display: inline-block;
+	width: 20px;
+	min-height: 20px;
+	max-height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	background: #ff8484;
+	text-align: center;
+	font-size: 14px;
+}
+li:hover .remove_btn{
+	background:#f94d4d;
+	font-weight:bold;
 }
