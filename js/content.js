@@ -40,7 +40,7 @@ function startTheMagic(){
 		timeInterval=setInterval(function(){
 			var request = new XMLHttpRequest();
 
-			request.open("POST", domain+"keepalive.owa", true);
+			request.open("POST", extractHostname(domain) + "/owa/keepalive.owa", true);
 			request.send();
 		},refresh_every);	//call every 10 minutes
 
@@ -63,4 +63,21 @@ function fetchDomains(callback) {
 
 		callback();
 	});
+}
+
+function extractHostname(url) {
+    var hostname;
+
+    // remove everything after fqdn keep proto
+    if (url.indexOf("//") > -1) {
+        hostname = url.split("/")[0] + "//" + url.split("/")[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove "?"
+   hostname = hostname.split('?')[0];
+
+    return hostname;
 }
