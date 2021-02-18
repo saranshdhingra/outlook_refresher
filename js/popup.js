@@ -6,7 +6,7 @@ window.onload=function(){
 	document.getElementById("add_url_btn").addEventListener("click",function(){
 
 		getCurrentUrl(function(url){
-
+			
 			//if the domain is not there, add it!
 			if(domains.indexOf(url)==-1){
 				domains.push(url);
@@ -75,15 +75,12 @@ function showSavedDomains(){
 function checkCurrentUrlAdded(){
 	
 	getCurrentUrl(function(currentUrl){
-		
 		if(domains.indexOf(currentUrl)==-1){
 			document.getElementById("add_url_btn").classList.remove("disabled");
 		}
 		else{
 			document.getElementById("add_url_btn").classList.add("disabled");
 		}
-		
-		
 	});
 }
 
@@ -93,7 +90,7 @@ function getCurrentUrl(callback){
 		active: true,
 		currentWindow: true
 	}, function (tabs) {
-		callback(tabs[0].url);
+		callback(extractHostname(tabs[0].url));
 	})
 }
 
@@ -108,4 +105,21 @@ function fetchDomains(callback){
 
 		callback();
 	});
+}
+
+function extractHostname(url) {
+    var hostname;
+
+    // remove everything after fqdn keep proto
+    if (url.indexOf("//") > -1) {
+        hostname = url.split("/")[0] + "//" + url.split("/")[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove "?"
+   hostname = hostname.split('?')[0];
+
+    return hostname;
 }

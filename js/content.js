@@ -33,14 +33,14 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 //some call me the main() function, but they are WRONG!
 function startTheMagic(){
-	let domain=window.location.href;
+	let domain=extractHostname(window.location.href);
 
 	if(selectedDomains.indexOf(domain)!=-1){
 
 		timeInterval=setInterval(function(){
 			var request = new XMLHttpRequest();
 
-			request.open("POST", extractHostname(domain) + "/owa/keepalive.owa", true);
+			request.open("POST", domain + "/owa/keepalive.owa", true);
 			request.send();
 		},refresh_every);	//call every 10 minutes
 
