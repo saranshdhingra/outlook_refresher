@@ -1,6 +1,6 @@
 {
 	"name": "OWA Keepalive",
-	"version": "1.1",
+	"version": "1.2",
 	"description": "Prevents the annoying periodic logging out from OWA",
 	"browser_action": {
 		"name": "OWA KeepAlive",
