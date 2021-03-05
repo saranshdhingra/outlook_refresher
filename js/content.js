@@ -33,14 +33,14 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 //some call me the main() function, but they are WRONG!
 function startTheMagic(){
-	let domain=window.location.href;
+	let domain=extractHostname(window.location.href);
 
 	if(selectedDomains.indexOf(domain)!=-1){
 
 		timeInterval=setInterval(function(){
 			var request = new XMLHttpRequest();
 
-			request.open("POST", domain+"keepalive.owa", true);
+			request.open("POST", domain + "/owa/keepalive.owa", true);
 			request.send();
 		},refresh_every);	//call every 10 minutes
 
@@ -63,4 +63,21 @@ function fetchDomains(callback) {
 
 		callback();
 	});
+}
+
+function extractHostname(url) {
+    var hostname;
+
+    // remove everything after fqdn keep proto
+    if (url.indexOf("//") > -1) {
+        hostname = url.split("/")[0] + "//" + url.split("/")[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove "?"
+   hostname = hostname.split('?')[0];
+
+    return hostname;
 }
